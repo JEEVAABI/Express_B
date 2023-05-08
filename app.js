@@ -1,11 +1,10 @@
 const express = require('express')
 const app = express()
 const servicePage = require('./servicePage.js')
-//const userRouter = require('./users')
-// const aboutusPage = require('./aboutusPage.js')
-// const contactusPage = require('./contactusPage.js')
-// const productPage = require('./productPage.js')
-// const loginPage = require('./loginPage.js')
+
+app.set('view engine','ejs')
+
+app.use(express.urlencoded({extend:true}))
 
  app.get('/',(request,response) =>{
     
@@ -16,11 +15,7 @@ const servicePage = require('./servicePage.js')
 
 
 app.use('/servicePage',servicePage) 
-//app.use('/users',userRouter)
-// app.use('/aboutusPage', aboutusPage)
-// app.use('/contactusPage', contactusPage)
-// app.use('/productPage',productPage)
-// app.use('/loginPage',loginPage)
+
 
 
 
