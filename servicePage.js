@@ -92,8 +92,8 @@ userRouter.post('/',(request,response)=>{
     
     //console.log(request.body.firstname)
     listOfServices.push({service:request.body.servicename})
-    // listOfServices.push({servicePrice:request.body.serviceCost})
-    // listOfServices.push({serviceTime:request.body.serviceduration})
+    listOfServices.push({servicePrice:request.body.serviceCost})
+    listOfServices.push({serviceTime:request.body.serviceduration})
 
     response.redirect(`/servicePage/${listOfServices.length}`)
 })
@@ -101,7 +101,7 @@ userRouter.post('/',(request,response)=>{
 
 
 
-userRouter.get('/:id([0-9]{1})',(request,response)=>{
+userRouter.get('/:id',(request,response)=>{
     response.send(`${request.user.service} with id ${request.params.id} is cost of 
     ${request.user.servicePrice} and it takes ${request.user.serviceTime} to complete`)
     //console.log(typeof listOfServices[0].servicePrice);
