@@ -2,6 +2,10 @@ const express = require('express')
 const app = express()
 // const servicePage = require('./servicePage.js')
 const userRouter = require('./users')
+const aboutusPage = require('./aboutusPage.js')
+const contactusPage = require('./contactusPage.js')
+const productPage = require('./productPage.js')
+const loginPage = require('./loginPage.js')
 
  app.get('/',(request,response) =>{
     

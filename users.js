@@ -4,23 +4,23 @@ const userRouter = express.Router()
 const listOfServices = [
     {
         'id' : 1,
-        'name' : 'jeeva'
+        'service' : 'app development'
     },
     {
         'id' : 2,
-        'name' : 'aaakash'
+        'service' : 'web development'
     },
     {
         'id' : 3,
-        'name' : 'adsdsdh'
+        'service' : 'full stack'
     },
     {
         'id' : 4,
-        'name' : 'sdsfsfsh'
+        'service' : 'backend devlopment'
     },
     {
         'id' : 5,
-        'name' : 'sdafgadfgdgrgregw'
+        'service' : 'front end development'
     }
 ]
 userRouter.get('/',(request,response)=>{
@@ -38,7 +38,7 @@ userRouter.get('/:id([0-9]{1})',(request,response)=>{
         response.send('page not found')
     }
     else{
-        response.json(userId.name)
+        response.json(userId.service)
     }
 
     response.send(`this is list of user ${request.params.id}`)
